@@ -1,14 +1,19 @@
 fun main() {
+    //запуск функции со значениями по умолчанию
+    println(moneyTransfer(1000))
+
+}
+
     fun moneyTransfer(transerValue: Int,            //переменная суммы перевода
                       summOfTransfers: Int = 0,     //переменная суммы переводов за месяц
-                      accountType: String = "VK Pay" //переменная типа платежной системы
+                      accountType: String = "VK Pay"//переменная типа платежной системы
     ): String {
         val comission = when (accountType) {
             "VK Pay" -> if (summOfTransfers + transerValue < 40_000 && transerValue < 15_000) "Комиссия 0 копеек"
                 else "Превышен лимит"
             "Mastercard", "Maestro" -> when (summOfTransfers) {
                 in 0..75_000 - transerValue-> "Комиссия 0 копеек"
-                in 600_000 - transerValue..Int.MAX_VALUE -> "Gревышен месячный лимит"
+                in 600_000 - transerValue..Int.MAX_VALUE -> "Превышен месячный лимит"
                 else -> "Комиссия " + (transerValue * 0.6 + 2000).toString() + " копеек"
             }
             "Visa", "Мир" -> when (summOfTransfers) {
@@ -20,6 +25,4 @@ fun main() {
         }
         return comission
     }
-    //запуск функции со значениями по умолчанию
-    println(moneyTransfer(1000))
-}
+
