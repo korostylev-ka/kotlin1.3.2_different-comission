@@ -1,6 +1,6 @@
 fun main() {
     //запуск функции со значениями по умолчанию
-    println(moneyTransfer(1000))
+    println(moneyTransfer(10000))
 
 }
 
