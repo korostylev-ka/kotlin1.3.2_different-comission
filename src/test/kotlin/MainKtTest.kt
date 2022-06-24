@@ -39,7 +39,7 @@ class MainKtTest {
         assertEquals("Комиссия 7500.0 копеек", resultVisa10000)
         assertEquals("Комиссия 3 500 копеек", resultVisa1000)
         assertEquals("Превышен месячный лимит", resultVisa590000)
-        assertEquals("Неверный способ оплатыERRORERROR", resultVisa1000Null)
+        assertEquals("Неверный способ оплаты", resultVisa1000Null)
 
     }
 
